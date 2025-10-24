@@ -12,12 +12,12 @@ export default async function MainLibrary() {
 
   return (
     <div>
-      <div>
-        <h2>Games Library</h2>
+      <h2>Games Library</h2>
+      <div className="game-collection">
         {games.map((games) => (
-          <div key={games.id} className="game-collection">
+          <div key={games.id} className="indiv-game">
+            <p>{games.game_title}</p>
             <Link href={`/game-library/${games.id}`}>
-              <p>{games.game_title}</p>
               <img src={games.img_src} alt={games.game_title}></img>
             </Link>
           </div>

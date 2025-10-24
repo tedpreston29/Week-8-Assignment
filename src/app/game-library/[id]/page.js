@@ -34,8 +34,8 @@ export default async function GamePage({ params }) {
       <div key={game.id}>
         <h2>{game.game_title}</h2>
         <img src={game.img_src} alt={game.game_title} />
-        <p>RELEASED: {game.release_year}</p>
-        <p>GENRE: {game.genre}</p>
+        <p>Released: {game.release_year}</p>
+        <p>Genre: {game.genre}</p>
       </div>
       <div className="cheats-container">
         {cheats.map((cheat) => (
@@ -46,6 +46,7 @@ export default async function GamePage({ params }) {
           </div>
         ))}
       </div>
+      <Link href={`/game-library/${game.id}/form`}>Submit New Cheat </Link>
       <Link href={"/game-library"}>Back to All Games</Link>
     </div>
   );

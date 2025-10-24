@@ -1,36 +1,11 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+24/10/25
 
-## Getting Started
+Added header and footer on my root layout page which will wrap all other pages and inserted {children} into it to show the Home Page on page load... also added an enter button on my Home Page with a link to main games library
 
-First, run the development server:
+Added my database query to my main game library to fetch all the games images and titles and displayed them on the page using .map. Each image has a Link element to an individual game page that shows cheats.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+added a query on my dynamic route to fetch individual games and their corrosponding cheats.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+added another route to a form submission page from my dynamic route. This route displays the games image and some form fields for a user to submit a new cheat... I found this quite difficult to figure out as I am still struggling getting my head around params and how it all links together.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add a like/dislike button... check out the 08-server-functions-forms example
