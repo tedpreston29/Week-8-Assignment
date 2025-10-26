@@ -39,12 +39,15 @@ export default async function NewCheatForm({ params }) {
   }
 
   return (
-    <div>
-      <div className="form-page-image">
+    <div className="flex flex-col mt-11 align ml-14 mb-10 gap-5 items-center">
+      <div className="justify-items-center items-center border-4 rounded-lg max-w-2xl text-2xl">
         <h2>{game.game_title}</h2>
         <img src={game.img_src} alt={game.game_title} />
       </div>
-      <form className="form" action={HandleSavedSub}>
+      <form
+        className="form border-4 border-cyan-300 flex p-3.5 m-1.5 text-[18px] items-center gap-1.5"
+        action={HandleSavedSub}
+      >
         <label htmlFor="cheat_title">Enter Title</label>
         <input id="cheat_title" name="cheat_title" type="text" required />
 

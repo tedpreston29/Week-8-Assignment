@@ -8,4 +8,9 @@ added a query on my dynamic route to fetch individual games and their corrospond
 
 added another route to a form submission page from my dynamic route. This route displays the games image and some form fields for a user to submit a new cheat... I found this quite difficult to figure out as I am still struggling getting my head around params and how it all links together.
 
-Add a like/dislike button... check out the 08-server-functions-forms example
+26/10
+started on basic styling using a mixture of tailwind and standard css.
+
+added a sort by ascending and descending feature in main library using searchParams.
+
+not totally happy with styling but will continue to play around with it after submission in own time.

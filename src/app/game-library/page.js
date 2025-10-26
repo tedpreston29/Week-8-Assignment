@@ -2,14 +2,10 @@ import { db } from "@/utils/utilities";
 import Link from "next/link";
 
 export default async function MainLibrary({ searchParams }) {
-  const sort = searchParams.sort;
+  const resolvedParams = await searchParams;
+  const sortParam = resolvedParams?.sort;
 
-  let order;
-  if (sort === "desc") {
-    order = "DESC";
-  } else {
-    order = "ASC";
-  }
+  const order = sortParam === "desc" ? "DESC" : "ASC";
 
   const results = await db.query(`SELECT games.id,
     games.game_title,
@@ -24,8 +20,12 @@ export default async function MainLibrary({ searchParams }) {
       <h2 className="relative text-3xl pl-5 mt-11 underline ">Games Library</h2>
 
       <div className="flex justify-end gap-4 pr-5 underline">
-        <Link href="/game-library?sort=asc">Sort Ascending</Link>
-        <Link href="/game-library?sort=desc">Sort Descending</Link>
+        <Link className="text-red-700" href="/game-library?sort=asc">
+          Sort Ascending
+        </Link>
+        <Link className="text-cyan-300" href="/game-library?sort=desc">
+          Sort Descending
+        </Link>
       </div>
 
       <div className="game-collection">

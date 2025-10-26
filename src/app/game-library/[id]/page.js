@@ -30,24 +30,41 @@ export default async function GamePage({ params }) {
   console.log("Individual cheat:", cheats);
 
   return (
-    <div>
-      <div key={game.id}>
+    <div className="flex flex-col mt-11 align ml-14 mb-10 gap-5">
+      <div
+        className="justify-items-center items-center border-4 rounded-lg max-w-2xl text-2xl"
+        key={game.id}
+      >
         <h2>{game.game_title}</h2>
         <img src={game.img_src} alt={game.game_title} />
         <p>Released: {game.release_year}</p>
         <p>Genre: {game.genre}</p>
       </div>
-      <div className="cheats-container">
+      <div className="flex flex-col gap-3 text-[18px]">
         {cheats.map((cheat) => (
-          <div key={cheat.cheats_id} className="cheats-item">
-            <p className="font-bold">CHEAT TITLE: {cheat.cheat_title}</p>
-            <p>CHEAT CODE: {cheat.cheat_code}</p>
-            <p>CHEAT EFFECT: {cheat.cheat_effect}</p>
+          <div
+            className="border-4 rounded-lg max-w-2xl  bg-gray-900"
+            key={cheat.cheats_id}
+          >
+            <p className="text-fuchsia-400  font-bold underline text-2xl">
+              CHEAT TITLE :
+            </p>
+            <p>{cheat.cheat_title}</p>
+            <p className=" text-neutral-400 font-bold underline text-2xl">
+              CHEAT CODE :
+            </p>
+            <p>{cheat.cheat_code}</p>
+            <p className=" text-neutral-400 font-bold underline text-2xl">
+              CHEAT EFFECT :
+            </p>
+            <p>{cheat.cheat_effect}</p>
           </div>
         ))}
       </div>
-      <Link href={`/game-library/${game.id}/form`}>Submit New Cheat </Link>
-      <Link href={"/game-library"}>Back to All Games</Link>
+      <div className="underline flex flex-col gap-5 text-[20px]">
+        <Link href={`/game-library/${game.id}/form`}>Submit New Cheat </Link>
+        <Link href={"/game-library"}>Back to All Games</Link>
+      </div>
     </div>
   );
 }
