@@ -3,13 +3,17 @@ import "./globals.css";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-black text-white">
         <div>
-          <h1>PlayStation2 Cheat Code Library</h1>
+          <h1 className="w-full text-center text-4xl relative top-4 underline">
+            PlayStation2 Cheat Code Library
+          </h1>
         </div>
         {children}
         <div>
-          <footer>Copyright 2025</footer>
+          <footer className="w-full text-center relative bottom-0 py-4">
+            Copyright 2025
+          </footer>
         </div>
       </body>
     </html>

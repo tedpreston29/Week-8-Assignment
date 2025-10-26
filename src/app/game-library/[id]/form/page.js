@@ -40,7 +40,7 @@ export default async function NewCheatForm({ params }) {
 
   return (
     <div>
-      <div className="form-image">
+      <div className="form-page-image">
         <h2>{game.game_title}</h2>
         <img src={game.img_src} alt={game.game_title} />
       </div>
