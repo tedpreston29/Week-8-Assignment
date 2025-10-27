@@ -13,4 +13,7 @@ started on basic styling using a mixture of tailwind and standard css.
 
 added a sort by ascending and descending feature in main library using searchParams.
 
-not totally happy with styling but will continue to play around with it after submission in own time.
+not totally happy or finished with styling but will continue to play around with it after submission in own time.
+
+Summary:
+I enjoy using Next.js over react. Maybe because react and Next are similar to each other but I feel I can visualise the the dynamic paths easier with them being routed with the folders instead of within a page in browser router in React. I am still having trouble with the db queries but this will come with practice. I did not quite manage to implement the delete button, but will also try in my own time.
