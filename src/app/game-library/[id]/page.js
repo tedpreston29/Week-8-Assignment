@@ -1,10 +1,13 @@
 import { db } from "@/utils/utilities";
 import Link from "next/link";
+import AddNewCheat from "@/components/AddNewCheat";
+import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 export default async function GamePage({ params }) {
   const { id } = await params;
 
-  const result = await db.query(
+  const gameDetails = await db.query(
     `SELECT games.id,
     games.game_title,
     games.release_year,
@@ -23,11 +26,25 @@ export default async function GamePage({ params }) {
     GROUP BY games.id, games.release_year, games.img_src, games.genre`,
     [id]
   );
-  const game = result.rows[0];
+  const game = gameDetails.rows[0];
   const cheats = game.cheat_info;
 
-  console.log("individual game:", game);
-  console.log("Individual cheat:", cheats);
+  if (!game) {
+    return <p>Game not found. Please check the URL.</p>;
+  }
+
+  async function HandleSavedSub(formData) {
+    "use server";
+    const cheat_title = formData.get("cheat_title");
+    const cheat_code = formData.get("cheat_code");
+    const cheat_effect = formData.get("cheat_effect");
+    await db.query(
+      `INSERT INTO cheats (cheat_title, code, effect, game_id) VALUES ($1, $2, $3, $4)`,
+      [cheat_title, cheat_code, cheat_effect, id]
+    );
+    revalidatePath(`/game-library/${game.id}`);
+    redirect(`/game-library/${game.id}`);
+  }
 
   return (
     <div className="flex flex-col mt-11 align ml-14 mb-10 gap-5">
@@ -61,8 +78,8 @@ export default async function GamePage({ params }) {
           </div>
         ))}
       </div>
-      <div className="underline flex flex-col gap-5 text-[20px]">
-        <Link href={`/game-library/${game.id}/form`}>Submit New Cheat </Link>
+      <div className="underline flex flex-col items-start gap-5 text-2xl">
+        <AddNewCheat HandleSavedSub={HandleSavedSub} />
         <Link href={"/game-library"}>Back to All Games</Link>
       </div>
     </div>
