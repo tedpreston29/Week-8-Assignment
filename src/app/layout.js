@@ -5,7 +5,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-black text-white">
         <header>
-          <nav className="flex items-center justify-center p-4 gap-4 h-20 bg-[#0f0f13] shadow-lg bg-opacity-65">
+          <nav className="flex items-center justify-center p-4 gap-4 h-20 bg-gray-900 shadow-lg bg-opacity-65">
             <h1>PlayStation2 Cheat Code Library</h1>
           </nav>
         </header>

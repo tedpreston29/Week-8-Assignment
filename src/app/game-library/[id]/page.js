@@ -48,46 +48,44 @@ export default async function GamePage({ params }) {
   }
 
   return (
-    <div className="flex flex-col mt-11 align ml-14 mb-10 gap-5">
-      <div
-        className="justify-items-center items-center border-4 rounded-lg max-w-2xl text-2xl"
-        key={game.id}
-      >
-        <h2>{game.game_title}</h2>
-        <Image
-          src={game.img_src}
-          width={500}
-          height={500}
-          alt={game.game_title}
-        />
-        <p>Released: {game.release_year}</p>
-        <p>Genre: {game.genre}</p>
-      </div>
-      <div className="flex flex-col gap-3 text-[18px]">
-        {cheats.map((cheat) => (
-          <div
-            className="border-4 rounded-lg max-w-2xl  bg-gray-900"
-            key={cheat.cheats_id}
-          >
-            <p className="text-fuchsia-400  font-bold underline text-2xl">
-              CHEAT TITLE :
-            </p>
-            <p>{cheat.cheat_title}</p>
-            <p className=" text-neutral-400 font-bold underline text-2xl">
-              CHEAT CODE :
-            </p>
-            <p>{cheat.cheat_code}</p>
-            <p className=" text-neutral-400 font-bold underline text-2xl">
-              CHEAT EFFECT :
-            </p>
-            <p>{cheat.cheat_effect}</p>
-          </div>
-        ))}
-      </div>
-      <div className="underline flex flex-col items-start gap-5 text-2xl">
-        <AddNewCheat HandleSavedSub={HandleSavedSub} />
+    <section className="flex flex-col gap-5">
+      <div className="underline flex flex-col items-start gap-1 m-2 text-lg">
         <Link href={"/game-library"}>Back to All Games?</Link>
+        <AddNewCheat HandleSavedSub={HandleSavedSub} />
       </div>
-    </div>
+
+      <div className="bg-[#0f0f13] rounded-lg p-6 flex flex-col items-center pb-4 gap-4 mx-auto max-w-2xl w-full">
+        <div
+          className="flex flex-col items-center p-3 rounded-lg w-full"
+          key={game.id}
+        >
+          <h2 className="text-2xl underline mb-4">{game.game_title}</h2>
+
+          <Image
+            src={game.img_src}
+            width={400}
+            height={400}
+            alt={game.game_title}
+          />
+
+          <p className="text-muted-foreground">
+            {game.genre} | {game.release_year}
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-3 text-lg w-full">
+          {cheats.map((cheat) => (
+            <div
+              className="bg-gray-900 rounded-lg w-full p-3"
+              key={cheat.cheats_id}
+            >
+              <p className="text-rose-600 font-bold">{cheat.cheat_title}</p>
+              <p>{cheat.cheat_code}</p>
+              <p>{cheat.cheat_effect}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
