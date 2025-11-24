@@ -4,11 +4,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-black text-white">
-        <div>
-          <h1 className="w-full ml-6 text-center text-4xl relative top-4 underline">
-            PlayStation2 Cheat Code Library
-          </h1>
-        </div>
+        <header>
+          <nav className="flex items-center justify-center p-4 gap-4 h-20 bg-[#0f0f13] shadow-lg bg-opacity-65">
+            <h1>PlayStation2 Cheat Code Library</h1>
+          </nav>
+        </header>
         {children}
         <div>
           <footer className="w-full ml-6 text-center relative bottom-0 py-4">

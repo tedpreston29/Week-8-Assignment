@@ -3,6 +3,7 @@ import Link from "next/link";
 import AddNewCheat from "@/components/AddNewCheat";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import Image from "next/image";
 
 export default async function GamePage({ params }) {
   const { id } = await params;
@@ -53,7 +54,12 @@ export default async function GamePage({ params }) {
         key={game.id}
       >
         <h2>{game.game_title}</h2>
-        <img src={game.img_src} alt={game.game_title} />
+        <Image
+          src={game.img_src}
+          width={500}
+          height={500}
+          alt={game.game_title}
+        />
         <p>Released: {game.release_year}</p>
         <p>Genre: {game.genre}</p>
       </div>
@@ -80,7 +86,7 @@ export default async function GamePage({ params }) {
       </div>
       <div className="underline flex flex-col items-start gap-5 text-2xl">
         <AddNewCheat HandleSavedSub={HandleSavedSub} />
-        <Link href={"/game-library"}>Back to All Games</Link>
+        <Link href={"/game-library"}>Back to All Games?</Link>
       </div>
     </div>
   );

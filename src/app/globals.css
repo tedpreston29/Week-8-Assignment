@@ -3,14 +3,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
-.game-collection {
+/* .game-collection {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 20px;
   padding: 20px;
   justify-content: center;
-}
+} */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
