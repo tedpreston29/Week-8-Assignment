@@ -56,7 +56,7 @@ export default async function GamePage({ params }) {
 
       <div className="bg-[#0f0f13] rounded-lg p-6 flex flex-col items-center pb-4 gap-4 mx-auto max-w-2xl w-full">
         <div
-          className="flex flex-col items-center p-3 rounded-lg w-full"
+          className="flex flex-col  items-center p-3 rounded-lg w-full scale-100 transition duration-300 ease-in-out hover:scale-105 "
           key={game.id}
         >
           <h2 className="text-2xl underline mb-4">{game.game_title}</h2>
@@ -66,6 +66,7 @@ export default async function GamePage({ params }) {
             width={400}
             height={400}
             alt={game.game_title}
+            className="transition duration-300 ease-in-out hover:shadow-[0_0_5px_6px_rgba(0,128,255,0.8)]"
           />
 
           <p className="text-muted-foreground">
@@ -73,10 +74,10 @@ export default async function GamePage({ params }) {
           </p>
         </div>
 
-        <div className="flex flex-col gap-3 text-lg w-full">
+        <div className="flex flex-col gap-3 text-lg w-full drop-shadow-lg m-5">
           {cheats.map((cheat) => (
             <div
-              className="bg-gray-900 rounded-lg w-full p-3"
+              className="bg-gray-900 rounded-lg w-full p-3  transition duration-300 ease-in-out hover:shadow-[0_0_10px_1px_rgba(0,128,255,0.8)]"
               key={cheat.cheats_id}
             >
               <p className="text-rose-600 font-bold">{cheat.cheat_title}</p>
