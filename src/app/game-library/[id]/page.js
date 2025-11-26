@@ -49,40 +49,55 @@ export default async function GamePage({ params }) {
 
   return (
     <section className="flex flex-col gap-5">
-      <div className="underline flex flex-col items-start gap-1 m-2 text-lg">
-        <Link href={"/game-library"}>Back to All Games?</Link>
+      <div className="bg-[#1c1f24] shadow-[4px_4px_8px_#24282e] rounded-2xl p-3 flex justify-center gap-2 mx-auto max-w-2xs w-full mt-5">
+        <Link
+          className="bg-[#1c1f24] shadow-[2px_2px_4px_#24282e] rounded-2xl p-2 hover:shadow-[2px_2px_4px_#14161a,-2px_-2px_4px_#24282e]"
+          href={"/game-library"}
+        >
+          Back to All Games?
+        </Link>
         <AddNewCheat HandleSavedSub={HandleSavedSub} />
       </div>
 
-      <div className="bg-[#0f0f13] rounded-lg p-6 flex flex-col items-center pb-4 gap-4 mx-auto max-w-2xl w-full">
+      <div className="bg-[#1c1f24] shadow-[8px_8px_16px_#24282e] rounded-2xl p-8 flex flex-col items-center gap-6 mx-auto max-w-2xl w-full">
         <div
-          className="flex flex-col  items-center p-3 rounded-lg w-full scale-100 transition duration-300 ease-in-out hover:scale-105 "
+          className="flex flex-col items-center p-6 rounded-2xl w-full transition duration-300 ease-in-out
+        bg-[#1c1f24]
+        shadow-[inset_6px_6px_12px_#14161a,inset_-6px_-6px_12px_#24282e]
+        hover:shadow-[8px_8px_16px_#14161a,-8px_-8px_16px_#24282e]"
           key={game.id}
         >
-          <h2 className="text-2xl underline mb-4">{game.game_title}</h2>
+          <h2 className="text-2xl underline mb-4 text-gray-200">
+            {game.game_title}
+          </h2>
 
           <Image
             src={game.img_src}
             width={400}
             height={400}
             alt={game.game_title}
-            className="transition duration-300 ease-in-out hover:shadow-[0_0_5px_6px_rgba(0,128,255,0.8)]"
+            className="rounded-xl transition duration-300 ease-in-out
+          shadow-[6px_6px_12px_#14161a,-6px_-6px_12px_#24282e]
+          hover:shadow-[8px_8px_16px_#14161a,-8px_-8px_16px_#24282e]"
           />
 
-          <p className="text-muted-foreground">
+          <p className="text-gray-400 mt-3">
             {game.genre} | {game.release_year}
           </p>
         </div>
 
-        <div className="flex flex-col gap-3 text-lg w-full drop-shadow-lg m-5">
+        <div className="flex flex-col gap-4 text-lg w-full">
           {cheats.map((cheat) => (
             <div
-              className="bg-gray-900 rounded-lg w-full p-3  transition duration-300 ease-in-out hover:shadow-[0_0_10px_1px_rgba(0,128,255,0.8)]"
+              className="rounded-2xl w-full p-4 transition duration-300 ease-in-out
+            bg-[#1c1f24]
+            shadow-[inset_6px_6px_12px_#14161a,inset_-6px_-6px_12px_#24282e]
+            hover:shadow-[8px_8px_16px_#14161a,-8px_-8px_16px_#24282e]"
               key={cheat.cheats_id}
             >
               <p className="text-rose-600 font-bold">{cheat.cheat_title}</p>
-              <p>{cheat.cheat_code}</p>
-              <p>{cheat.cheat_effect}</p>
+              <p className="text-gray-300">{cheat.cheat_code}</p>
+              <p className="text-gray-300">{cheat.cheat_effect}</p>
             </div>
           ))}
         </div>
