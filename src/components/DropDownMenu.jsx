@@ -1,5 +1,4 @@
-"use client";
-import { useState } from "react";
+// Add this to search params on main page
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,23 +7,16 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import AddNewCheat from "./AddNewCheat";
 import Link from "next/link";
-export function DropDownMenu({ HandleSavedSub }) {
+export function DropDownMenu() {
   return (
-    <>
-      <DropdownMenu>
-        <DropdownMenuTrigger>Options</DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem onSelect={() => setShowAddCheatModal(true)}>
-            Add Cheat?
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link href={"/game-library"}>Back to All Games?</Link>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    </>
+    <DropdownMenu>
+      <DropdownMenuTrigger>Sort By</DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem></DropdownMenuItem>
+        <DropdownMenuItem></DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }

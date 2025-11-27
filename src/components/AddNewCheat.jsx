@@ -12,7 +12,7 @@ import {
 export default function AddNewCheat({ HandleSavedSub }) {
   return (
     <Dialog>
-      <DialogTrigger className="bg-[#1c1f24] shadow-[2px_2px_4px_#24282e] rounded-2xl p-2 hover:shadow-[2px_2px_4px_#14161a,-2px_-2px_4px_#24282e]">
+      <DialogTrigger className="bg-[#1c1f24] shadow-[2px_2px_4px_#24282e] rounded-2xl p-2 hover:shadow-[2px_2px_4px_#14161a,-2px_-2px_4px_#24282e] text-rose-600 font-bold">
         Add Cheat
       </DialogTrigger>
       <DialogContent className="bg-black/50 shadow-md rounded-3xl px-8 pt-6 pb-8 mb-4">

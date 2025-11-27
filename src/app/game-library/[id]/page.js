@@ -49,9 +49,9 @@ export default async function GamePage({ params }) {
 
   return (
     <section className="flex flex-col gap-5">
-      <div className="bg-[#1c1f24] shadow-[4px_4px_8px_#24282e] rounded-2xl p-3 flex justify-center gap-2 mx-auto max-w-2xs w-full mt-5">
+      <div className="bg-[#1c1f24] shadow-[4px_4px_8px_#24282e] rounded-2xl p-4 flex justify-center gap-3 mx-auto max-w-80 w-full mt-5">
         <Link
-          className="bg-[#1c1f24] shadow-[2px_2px_4px_#24282e] rounded-2xl p-2 hover:shadow-[2px_2px_4px_#14161a,-2px_-2px_4px_#24282e]"
+          className="bg-[#1c1f24] shadow-[2px_2px_4px_#24282e] rounded-2xl p-2 hover:shadow-[2px_2px_4px_#14161a,-2px_-2px_4px_#24282e] text-rose-600 font-bold"
           href={"/game-library"}
         >
           Back to All Games?
@@ -89,7 +89,7 @@ export default async function GamePage({ params }) {
         <div className="flex flex-col gap-4 text-lg w-full">
           {cheats.map((cheat) => (
             <div
-              className="rounded-2xl w-full p-4 transition duration-300 ease-in-out
+              className="rounded-2xl w-full p-4
             bg-[#1c1f24]
             shadow-[inset_6px_6px_12px_#14161a,inset_-6px_-6px_12px_#24282e]
             hover:shadow-[8px_8px_16px_#14161a,-8px_-8px_16px_#24282e]"
