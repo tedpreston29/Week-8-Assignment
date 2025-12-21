@@ -1,6 +1,6 @@
 import { db } from "@/utils/utilities";
 import Link from "next/link";
-import GamesDisplay from "@/components/GameDisplay";
+import MainDisplay from "@/components/MainDisplay";
 
 export default async function MainLibrary({ searchParams }) {
   const resolvedParams = await searchParams;
@@ -14,5 +14,5 @@ export default async function MainLibrary({ searchParams }) {
 
   const games = results.rows;
 
-  return <GamesDisplay content={games} />;
+  return <MainDisplay content={games} />;
 }
